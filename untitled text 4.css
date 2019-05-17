@@ -1,0 +1,31 @@
+.button{
+background-color:red;
+background-position:center;
+font-family: black;
+font-weight: bold;
+border-radius:50%;
+height:100px;
+width:100px;
+border-style: solid;
+border-width:2px;
+border-color:black;
+text-align:center;
+line-height:100px;
+box-shadow: 5px 5px 5px #888888;
+}
+
+
+$(document).ready(function(){
+    $("#button").click(function(){
+        var toAdd= $("input[name=checkListItem]").val();
+            
+    $(".list").append("<div class='item'>" + toAdd + "</div>");
+           
+ });  
+        
+        $(document).on('click', '.item', function() {
+    $(this).remove();
+            });
+        
+    
+    });

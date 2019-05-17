@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<link href="practicastylesheet.css" rel="stylesheet" type="text/css">
+        
+
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+
+</script>
+
+<script>
+var listEmail = [];
+var listFirstName = [];
+var listSecondName = [];
+var listPassword = [];
+var listGender = [];
+var listDOB =[];
+var aboutMe =[];
+var journalInfo =[];
+$(document).ready(function(){
+    $(".button").click(function(){
+    $(this).css("background-color","green");
+    $(this).fadeOut("slow");
+    $(".holder").css("display","none");
+    $(".form1").fadeIn("slow");
+    });
+    
+////////////////////////////////////////////////////////////////////////////////////////
+
+      $(document).on("click","#logIn", function(){
+           $(this).fadeOut("slow");
+           $(".form1").css("display", "none");
+           $(".form3").fadeIn("slow"); 
+            });
+ $(document).on("click","#newUser", function(){
+           $(this).fadeOut("slow");
+           $(".form1").css("display", "none");
+           $(".form2").slideDown("slow"); 
+            });
+          
+///////////////////////////////////////////////////////////////////////////////////////////          
+          
+           $(document).on("click","input[name ='First']", function(){
+         $(this).css("background-color","yellow");
+            });
+            $(document).on("click","input[name ='Second']", function(){
+         $(this).css("background-color","yellow");
+            });
+            $(document).on("click","input[name ='Email']", function(){
+         $(this).css("background-color","yellow");
+            });
+            
+             $(document).on("blur","input[name ='First']", function(){
+             $(this).css("background-color", "white");
+         var first = $("input[name = 'First']").val();
+         var lengthName = first.length;
+        
+         if(lengthName == 0){
+         alert("Sorry but you have to fill this out");
+        $("input[name ='First']").focus();
+         }
+         else{
+           $("input[name ='Second']").focus();         
+           }
+            });
+            
+            $(document).on("blur","input[name ='Second']", function(){
+             $(this).css("background-color", "white");
+         var second = $("input[name = 'Second']").val();
+         var lengthSecondName = second.length;
+        
+         if(lengthSecondName == 0){
+         alert("Sorry but you have to fill this out");
+        $("input[name ='Second']").focus();
+         }
+         else{
+           $("input[name ='Email']").focus();         
+           }
+            });
+            
+            
+             $(document).on("blur","input[name ='Email']", function(){
+             $(this).css("background-color", "white");
+         var email = $("input[name = 'Email']").val();
+         var atExist = email.match("@");
+         var lengthEmail = email.length;
+        
+         if(lengthEmail == 0){
+         alert("Sorry but you have to fill out your e-mail");
+        $("input[name ='Email']").focus();
+         }
+         else{         
+           
+           if(atExist == "@"){
+                 if(email.match("gmail.com") =="gmail.com"){$("input[name ='sex']").focus();}
+                
+           else if(email.match("ucm.es") =="ucm.es"){("input[name ='sex']").focus();}  
+          else if(email.match("oxy.edu") =="oxy.edu"){("input[name ='sex']").focus();}  
+          else{alert("Sorry, but our website doesn't support that e-mail");$("input[name ='Email']").focus();}
+          }
+             else{
+             alert("Enter a valid e-mail");
+            $("input[name ='Email']").focus();         
+           }         
+           
+             }
+            });
+            
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+$(document).on("click","input[name = 'submit']", function(){
+var firstSubmit = $("input[name = 'First']").val();
+var secondSubmit = $("input[name = 'Second']").val();
+var emailSubmit = $("input[name = 'Email']").val(); 
+var monthS = $('#month option:selected').html();
+var day1S = $('#day option:selected').html();
+var day2S = $('#day2 option:selected').html();
+var year1S = $('#year1 option:selected').html();
+var year2S = $('#year2 option:selected').html();
+var year3S = $('#year3 option:selected').html();
+
+var DOB = monthS + " " +day1S+day2S+", " +year1S+ year2S + year3S;
+
+if(firstSubmit.length ==0){
+alert("Fill Out First Name");
+$("input[name = 'First']").focus();
+}
+
+else{
+            if(secondSubmit.length ==0){
+           alert("You have to fill out Second Name");
+                                        }
+            else{
+               if(day1S == "0"){
+                    if(day2S == "0"){
+                              alert("Add your a real D.O.B");
+                                    }
+                    else{
+                           $(".form2").fadeOut("slow");
+                            $(".form2").css("display", "none")
+                           $(".form4").fadeIn("slow");
+                  $("#nameTitle").replaceWith('<h2 id= "nameTitle">'+firstSubmit + ' '+secondSubmit+'</h2>');
+                           
+                         }
+                         
+                         
+                }
+                else{
+                     $(".form2").fadeOut("slow");
+                     $(".form2").css("display", "none")
+                    $(".form4").fadeIn("slow");
+                  $("#nameTitle").replaceWith('<h2 id= "nameTitle">'+firstSubmit + ' '+secondSubmit+'</h2>');
+                }
+ }}               
+                   
+
+});
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+$(document).on("click","input[name = 'submit2']", function(){          
+   var school = $("input[name ='schoolName']").val();
+ var password =$("input[name = 'passwordLogIn']").val();
+ var photoLink = $('input[name = "photoLog"]').val(); 
+           
+             if(school.length == 0){
+             alert("You need to put your school's Name");
+             }
+             else{
+                  if(password.length ==0){
+                 alert("You need a password");
+                 }
+                 else{
+                      if(photoLink.length == 8){
+                 $(".form4").fadeOut("slow");
+                 $(".form4").css("display", "none");
+                 $("body").css("background-image","url('http://rivertown.blogs.petaluma360.com/files/2014/08/Books.jpg')")
+                 $(".form5").fadeIn("fast");
+                $(".journal").css("display","none");
+
+                 }
+                 else{
+                 $("#photos").attr('src', photoLink);
+                  $(".form4").fadeOut("slow");
+                 $(".form4").css("display", "none");
+                 $(".form5").fadeIn("fast");
+                $("body").css("background-image","url('http://rivertown.blogs.petaluma360.com/files/2014/08/Books.jpg')")
+                $(".journal").css("display","none");
+                 }
+                 }
+             }
+         
+             
+            });
+ /////////////////////////////////////////////////////////////////////////////////////// 
+ $(document).on("click","#new",function(){
+$("#box").val(" ");
+
+});
+$(document).on("click", "#font", function(){
+$("#menu").slideToggle("slow");
+});
+
+$(document).on("click", "#sertif", function(){
+$("#menu").fadeOut("slow");
+$("#box").css("font-family","sertif");
+});
+
+$(document).on("click", "#cursive", function(){
+$("#menu").fadeOut("slow");
+$("#box").css("font-family","cursive");
+});
+
+$(document).on("click", "#Verdana", function(){
+$("#menu").fadeOut("slow");
+$("#box").css("font-family","Verdana");
+});
+
+$(document).on("click", "#fontsize", function(){
+$("#menu2").slideToggle("slow");
+});
+
+$(document).on("click", "#small", function(){
+$("#menu2").fadeOut("slow");
+$("#box").css("font-size","15px");
+});
+$(document).on("click", "#medium", function(){
+$("#menu2").fadeOut("slow");
+$("#box").css("font-size","23px");
+});
+$(document).on("click", "#large", function(){
+$("#menu2").fadeOut("slow");
+$("#box").css("font-size","30px");
+});
+
+$(document).on("click","input[name = 'logInShit']", function(){
+          $(".form3").fadeOut("slow");
+                 $(".form3").css("display", "none");
+                 $(".form5").fadeIn("fast");
+                $("body").css("background-image","url('http://rivertown.blogs.petaluma360.com/files/2014/08/Books.jpg')")
+                $(".journal").css("display","none");
+                 });
+});
+</script>
+
+
+
+
+
+
+
+<noscript>
+            <p>This page requires a JavaScript-enabled browser.</p>
+</noscript>
+
+<!--This is a comment. Comments are not displayed in the browser-->
+
+<div class ="form2">
+<h2 id = "registration">Registration<h2>
+<form>
+<table>
+      <tr>
+      <td>First Name</td><td><input type = "text" name = "First"></td>
+      </tr>
+      <tr>
+      <td>Second Name</td><td><input type = "text" name = "Second"></td>
+      </tr>
+      <tr>
+      <td>Email</td><td><input type = "text" name = "Email"></td>
+      </tr>
+      <tr>
+      <td>Sex</td><td>Male<input type="radio" name="sex" value="male" checked></td><td>Female<input type="radio" name="sex" value="female"></td>
+      </tr>
+     
+</table>
+ <table id ="table2">
+<tr rowspan = "3">D.O.B:</tr>
+ <tr>
+      <th>Month</th>
+                         <td><select name ="month" id = "month">
+                              <option value="Jan">January</option>
+                             <option value="Feb">February</option>
+                             <option value="Mar">March</option>
+                             <option value="Apr">April</option>
+                             <option value="May">May</option>
+                             <option value="Jun">June</option>
+                             <option value="Jul">July</option>
+                             <option value="Aug">August</option>
+                               <option value="Sept">September</option>
+                             <option value="Oct">October</option>
+                               <option value="Nov">November</option>
+                             <option value="Dec">December</option>
+                              </select> 
+                  </td>
+              <th>Day</th>  <td ><select name = "day" id = "day" >
+                              <option value="0">0</option>
+                             <option value="1">1</option>
+                              <option value="2">2</option>
+                               <option value="3">3</option>
+                            </select> 
+                            <select name = "day2" id = "day2">
+                              <option value="0">0</option>
+                             <option value="1">1</option>
+                              <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                             <option value="5">5</option>
+                              <option value="6">6</option>
+                               <option value="7">7</option>
+                               <option value="8">8</option>
+                             <option value="9">9</option>
+                            </select> 
+                  </td>
+                  </tr>
+                  <tr>
+                 <th>Year</th> <td colspan = "2"><select name ="year1" id = "year1">
+                              <option value="19">19</option>
+                             <option value="20">20</option>
+                             
+                            </select>
+                            <select name = "year2" id = "year2">
+                            <option value="4">4</option>
+                              <option value="5">5</option>
+                             <option value="6">6</option>
+                              <option value="7">7</option>
+                            <option value="8">8</option>
+                              <option value="9">9</option>
+                             <option value="0">1</option>
+                              <option value="1">2</option>
+                            </select> 
+                            <select name ="year3" id = "year3">
+                              <option value="0">0</option>
+                             <option value="1">1</option>
+                              <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                             <option value="5">5</option>
+                              <option value="6">6</option>
+                               <option value="7">7</option>
+                               <option value="8">8</option>
+                             <option value="9">9</option>
+                            </select> 
+                             
+                  </td>
+                  <td>      <td></tp>
+</td>
+                  </tr>
+</table>
+
+<input type="button" value="Submit" name = "submit">
+</form>
+
+
+
+
+</div>
+
+
+
+<!--This is a comment. Comments are not displayed in the browser-->
+<div class ="form4">
+<h2 class = "registration">Registration<h2>
+<form>
+<table>
+      <tr>
+      <td>School Name</td><td><input type = "text" name = "schoolName"></td>
+      </tr>
+      <tr>
+      <td>Password</td><td><input type = "password" name = "passwordLogIn"></td>
+      </tr>
+       <tr>
+      <td>Photo</td><td><input type = "text" name = "photoLog" value = "Optional"></td>
+      </tr>
+     
+</table>
+
+
+<input type="button" value="Submit" name = "submit2">
+</form>
+
+</div>
+
+<!--This is a comment. Comments are not displayed in the browser-->
+<div class = "form1">
+
+<div id = "logIn">Log In</div>
+<div id = "newUser">New User</div>
+</div>
+
+
+
+<!--This is a comment. Comments are not displayed in the browser-->
+
+<form method="post">
+
+
+<div class  ="form3">
+<h2>Log In</h2>
+<table id ="logInTable">
+      <tr>
+           <td>Username</td><td><input type ="text" name = "username" ></td>
+      </tr>
+      <tr>
+           <td>Password</td><td><input type ="password" name ="passwordLogIn" ></td>
+      </tr>
+      <tr>
+           <input type="button" value = "Submit" name = "logInShit">      
+     </tr>
+
+
+
+     
+</table>
+</div>
+</form>
+
+
+
+
+<!--This is a comment. Comments are not displayed in the browser-->
+
+<div class="holder">
+  <div class ="button">PUSH</div>
+  <br>
+    <h1 >Sometimes life just goes on<br>Click the Button</h1>
+
+</div>
+
+<!--This is a comment. Comments are not displayed in the browser-->
+
+<h3 class ="journal">Live<br>Dream<br>Get Inspired <br> Personal Online Journal</h3>
+
+<!--This is a comment. Comments are not displayed in the browser-->
+
+<div class="form5">
+<h2 id = "nameTitle">Name Here Please</h2>
+<div id = "new">New</div>
+<div id = "font">Font</div>
+<div id = "menu">
+            <ul>
+                <li id ="sertif">sertif</li>
+                <li id ="cursive">cursive</li>
+                <li id ="Verdana">Verdana</li>
+            </ul>
+</div>
+<div id = "menu2"> <ul>
+                <li id ="small">Small</li>
+                <li id ="medium">Medium</li>
+                <li id ="large">Large</li>
+            </ul></div>
+<div id = "fontsize">Font Size</div>
+<div class = "photo">
+<img id= "photos" src = "http://cri-paris.org/wp-content/uploads/no-photo.jpg" >
+</div>
+<div class = "notePad">
+<textarea id ="box"></textarea>
+</div>
+</div>
+</body>
+
+</html>

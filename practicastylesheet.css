@@ -1,0 +1,336 @@
+body{
+background-image: url("https://nenulandia.files.wordpress.com/2011/05/camera01_light-bulb.jpeg");
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+}
+.holder{
+background-color:red;
+border-style:solid;
+border-width: 10px;
+background-image: url("http://a1.s6img.com/cdn/box_006/post_16/797268_7284966_lz.jpg");
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+height: 250px;
+width: 350px;
+margin-left:auto;
+margin-right:auto;
+
+ 
+}
+.form1{
+background-color:black;
+border-style:solid;
+border-color:white;
+border-width: 10px;
+background-position:center;
+background-size: cover;
+height: 250px;
+width: 350px;
+margin-left:auto;
+margin-right:auto;
+display:none;
+
+
+}
+
+.form2{
+background-color:black;
+border-style:solid;
+border-color:white;
+border-width: 10px;
+background-position:center;
+background-size: cover;
+height: 430px;
+width: 450px;
+margin-left:auto;
+margin-right:auto;
+display:none;
+color:white;
+font-family:cursive;
+font-size:10;
+}
+
+.form3{
+background-color:black;
+border-style:solid;
+border-color:white;
+border-width: 10px;
+background-position:center;
+background-size: cover;
+height: 250px;
+width: 350px;
+margin-left:auto;
+margin-right:auto;
+display:none;
+color:white;
+font-family:cursive;
+font-size:25px;
+text-align:center;
+}
+
+.form4{
+background-color:black;
+border-style:solid;
+border-color:white;
+border-width: 10px;
+background-position:center;
+background-size: cover;
+height: 430px;
+width: 450px;
+margin-left:auto;
+margin-right:auto;
+display:none;
+color:white;
+font-family:cursive;
+font-size:10;
+display:none;
+}
+
+logInTable{
+margin-left:50%;
+line-height: 150px;
+
+
+}
+
+#table2{
+text-align:center;
+ margin-left:15%; 
+ font-size:15px;
+
+}
+
+.registration{
+text-align:center;
+text-decoration:underline;
+font-size: 40px;
+}
+
+
+#logIn{
+color:black;
+background-color:white;
+font-size: 38px;
+height: 100px;
+width:175px;
+text-align:center;
+display:inline;
+border-radius:10%;
+font-weight: bold;
+line-height:200px;
+font-family:cursive;
+ padding-left: 3%;
+ margin-left:2%;
+ outline-style: dashed;
+outline-color:white;
+ margin-left:5%;
+}
+#logIn:hover{
+outline-style:solid;
+font-size:45px;
+}
+
+#newUser{
+color:black;
+background-color:white;
+font-size: 35px;
+height: 100px;
+width:160px;
+text-align:center;
+display:inline;
+border-radius:10%;
+font-weight: bold;
+line-height:220px;
+font-family:cursive;
+padding-left: 3%;
+outline-style: dashed;
+outline-color:white;
+ margin-left:7.5%;
+}
+#newUser:hover{
+outline-style:solid;
+font-size:40px;
+}
+
+
+
+ 
+.button{
+background-color:red;
+background-position:center;
+font-family: black;
+font-weight: bold;
+border-radius:50%;
+height:100px;
+width:100px;
+border-style: solid;
+border-width:2px;
+border-color:black;
+text-align:center;
+line-height:100px;
+box-shadow: 5px 5px 5px #888888;
+margin-left:auto;
+margin-right:auto;
+}
+
+
+.button:hover{
+background-color: #700000;
+border-color: white;
+}
+
+
+h1{
+color: black;
+font-family:cursive;
+font-weight:bold;
+text-align:center;
+}
+
+
+h1:hover{
+color:white;
+}
+
+
+.journal{
+
+font-size: 30px;
+color: white;
+text-decoration:underline;
+font-style:cursive;
+
+
+}
+img{
+height: 150px;
+width:120px;
+margin: 5%;
+margin-left: 14%;
+}
+#nameTitle{
+color:#8AB8E6;
+font-family:cursive;
+font-size:35px;
+
+}
+ul {
+    list-style-type: none;
+	position: relative;
+	left: -20px;
+}
+ul li{
+background: #eeeeee;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin: 3px;
+	font-size: 1em;
+	height: 20px;
+	width:70px;
+	text-align:center;
+	font-family: cursive;
+	}
+ul li:hover{	
+background-color:white;
+}
+.notePad{
+height:400px;
+width:400px;
+background-color:black;
+display:block;
+margin-left: auto; 
+margin-right: auto;
+margin-bottom: 100%; 
+
+
+}
+#box{
+font-family:cursive;
+font-size:16px;
+background-image:url("http://www.psdgraphics.com/file/old-paper-texture.jpg");
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+height:400px;
+width:450px;
+font-weight:bold;
+}
+.photo{
+height:200 px;
+width: 175px;
+border-radius:20%;
+background-color:#6B2424;
+float:left;
+border: 2px solid black;
+
+
+}
+.form5{
+background-color:#4C4C4C;
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+height: 500px;
+width:900px;
+display:none;
+}
+#new{
+	border-radius: 5px;
+	border: 2px solid black;
+	background-color:#6B2424;
+	height: 20px;
+	width: 100px;
+	text-align: center;
+	position:absolute;
+	left: 300px;
+	top:90px;
+	font-family:cursive;
+}
+#font{
+	border-radius: 5px;
+	border: 2px solid black;
+	background-color:#6B2424;
+	height: 20px;
+	width: 100px;
+	text-align: center;
+	position:absolute;
+	left: 420px;
+	top:90px;
+	font-family:cursive;
+}
+#menu{
+height: 100px;
+width: 100px;
+position:absolute;
+	left: 420px;
+	top:115px;
+background-color:yellow;	
+display:none;
+border-radius:5px;
+
+}
+#menu2{
+height: 100px;
+width: 100px;
+position:absolute;
+	left: 530px;
+	top:115px;
+background-color:yellow;	
+display:none;
+border-radius:5px;
+
+}
+#fontsize{
+	border-radius: 5px;
+	border: 2px solid black;
+	background-color:#6B2424;
+	height: 20px;
+	width: 100px;
+	text-align: center;
+	position:absolute;
+	left: 530px;
+	top:90px;
+	font-family:cursive;
+}
